@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace Restful.Shared.Models
 {
-    public class Order
+    public class Package
     {
+        public Guid PackageId { get; set; }
         public Guid OrderId { get; set; }
-        public int OrderNo { get; set; }
-        public List<Package>? Packages { get; set; }
+        public Order? Order { get; set; }
+        public List<Content>? Contents { get; set; }
+
+
     }
 }

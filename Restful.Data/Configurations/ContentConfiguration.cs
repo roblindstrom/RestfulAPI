@@ -9,17 +9,17 @@ using System.Threading.Tasks;
 
 namespace Restful.Data.Configurations
 {
-    public class LineItemConfiguration : IEntityTypeConfiguration<LineItem>
+    public class ContentConfiguration : IEntityTypeConfiguration<Content>
     {
-        public void Configure(EntityTypeBuilder<LineItem> builder)
+        public void Configure(EntityTypeBuilder<Content> builder)
         {
             builder
-                .HasKey(li => li.LineItemId);
+                .HasKey(c => c.ContentId);
 
             builder
-                .HasOne(li => li.Item)
-                .WithMany(i => i.LineItems)
-                .HasForeignKey(li => li.ItemId);
+                .HasOne(c => c.Package)
+                .WithMany(p => p.Contents)
+                .HasForeignKey(c => c.PackageId);
         }
     }
 }

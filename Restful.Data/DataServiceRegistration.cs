@@ -21,7 +21,5 @@ namespace Restful.Data
             return services;
         }
 
-
-
     }
 }

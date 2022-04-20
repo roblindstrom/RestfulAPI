@@ -16,11 +16,6 @@ namespace Restful.Data.Repositories
             _restfulDbContext = myDbContext;
         }
 
-        //Här körs anroppen mot databasen
-
-        //Väldigt viktigt att i BaseRepository ska endast finnas metoder som flera klasser ska använda sig utav
-        //Annars ska man skriva det i den specifika repositorien. Tex ModelRepository
-
         public virtual async Task<T> GetByIdAsync(Guid id)
         {
             return await _restfulDbContext.Set<T>().FindAsync(id);
@@ -39,6 +34,14 @@ namespace Restful.Data.Repositories
             await _restfulDbContext.SaveChangesAsync();
 
             return entity;
+        }
+
+        public async Task<IEnumerable<T>> AddRangeAsync(IEnumerable<T> entities)
+        {
+            await _restfulDbContext.Set<T>().AddRangeAsync(entities);
+            await _restfulDbContext.SaveChangesAsync();
+
+            return entities;
         }
 
 

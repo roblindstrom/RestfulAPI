@@ -17,7 +17,7 @@ namespace Restful.Data.Configurations
                 .HasKey(x => x.OrderId);
 
             builder
-                .HasMany(o => o.Items)
+                .HasMany(o => o.Packages)
                 .WithOne(i => i.Order)
                 .HasForeignKey(i => i.OrderId);
         }

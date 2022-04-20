@@ -13,6 +13,8 @@ namespace Restful.Shared.IRepositories
 
         Task<TEntity> AddAsync(TEntity entity);
 
+        Task<IEnumerable<TEntity>> AddRangeAsync(IEnumerable<TEntity> entities);
+
         Task UpdateAsync(TEntity entity);
 
         Task DeleteAsync(TEntity entity);

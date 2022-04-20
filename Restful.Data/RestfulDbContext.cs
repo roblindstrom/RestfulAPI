@@ -18,13 +18,14 @@ namespace Restful.Data
         }
 
         public DbSet<Order>? Orders { get; set; }
-        public DbSet<Item>? Items { get; set; }
-        public DbSet<LineItem>? LineItems { get; set; }
+        public DbSet<Package>? Packages { get; set; }
+        public DbSet<Content>? Contents { get; set; }
         
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(RestfulDbContext).Assembly);
+            
+           modelBuilder.ApplyConfigurationsFromAssembly(typeof(RestfulDbContext).Assembly);
 
             base.OnModelCreating(modelBuilder);
         }

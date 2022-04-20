@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Restful.Shared.RequestModels
+namespace Restful.Services.Services.Seeds
 {
-    public class LineItemRequest
+    public interface ISeedService
     {
+        Task SeedDatabase();
     }
 }
