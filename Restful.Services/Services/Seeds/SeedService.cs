@@ -23,8 +23,8 @@ namespace Restful.Services.Services.Seeds
         }
         public async Task SeedDatabase()
         {
-            var order1 = new Order() { OrderId = Guid.NewGuid(), OrderNo = 1, Packages = new List<Package>() };
-            var order2 = new Order() { OrderId = Guid.NewGuid(), OrderNo = 2, Packages = new List<Package>() };
+            var order1 = new Order() { OrderId = Guid.NewGuid(), OrderNo = 1, Packages = new List<Package>(), CustomerName = "John", CustomerId = Guid.NewGuid() };
+            var order2 = new Order() { OrderId = Guid.NewGuid(), OrderNo = 2, Packages = new List<Package>(), CustomerName = "Anna", CustomerId = Guid.NewGuid() };
 
             var package11 = new Package() { OrderId = order1.OrderId, PackageId = Guid.NewGuid(), Contents = new List<Content>() };
             var package12 = new Package() { OrderId = order1.OrderId, PackageId = Guid.NewGuid(), Contents = new List<Content>() };

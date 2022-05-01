@@ -2,6 +2,8 @@
 using Microsoft.Extensions.DependencyInjection;
 using Restful.Data;
 using Restful.Data.Repositories;
+using Restful.Services.Services.MetaData;
+using Restful.Services.Services.Orders;
 using Restful.Services.Services.Seeds;
 using Restful.Shared.IRepositories;
 using System;
@@ -22,6 +24,10 @@ namespace Restful.Services
             services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<IPackageRepository, PackageRepository>();
             services.AddScoped<IContentRepository, ContentRepository>();
+
+            services.AddScoped<IOrderService, OrderService>();
+            services.AddScoped<ISeedService, SeedService>();
+            services.AddScoped(typeof(IMetaDataService<>), typeof(MetaDataService<>));
 
             services.AddScoped<ISeedService, SeedService>();
 
